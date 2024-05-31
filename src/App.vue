@@ -13,16 +13,11 @@
       @cell-click="handleCellClick"
     />
     <button @click="restart" class="quoridor__button">Reiniciar Juego</button>
-    <footer class="quoridor__footer">
-      <p>Realizado por<br>
-      Cristian Javier Rodríguez Cárdenas<br>
-      Frans Sebastian Villamizar Maldonado</p>
-    </footer>
   </section>
 </template>
 
 <script>
-import Board from './components/organisms/Board.vue';
+import Board from './components/organismo/Board.vue';
 
 export default {
   components: {
@@ -88,9 +83,9 @@ export default {
     },
     checkForWinner() {
       if (this.player1.y === 8) {
-        this.winner = 'Jugador 1 (Rojo)';
+        this.winner = 'Jugador 1';
       } else if (this.player2.y === 0) {
-        this.winner = 'Jugador 2 (Azul)';
+        this.winner = 'Jugador 2';
       }
     }
   }
@@ -141,9 +136,4 @@ export default {
   background-color: var(--primary-hover-color);
 }
 
-.quoridor__footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: gray;
-}
 </style>
